@@ -1,0 +1,17 @@
+{
+  "entity": "transactions",
+  "version": "1.0.0",
+  "description": "Card and account transactions. The largest entity.",
+  "primary_key": ["transaction_id"],
+  "columns": [
+    {"name": "transaction_id", "type": "string", "nullable": false, "pattern": "^TXN_[0-9]{8}$"},
+    {"name": "account_id", "type": "string", "nullable": false, "pattern": "^ACCT_[0-9]{8}$"},
+    {"name": "timestamp", "type": "timestamp", "nullable": false},
+    {"name": "amount", "type": "float", "nullable": false, "min": 0},
+    {"name": "merchant_category", "type": "string", "nullable": false,
+     "allowed": ["grocery", "restaurant", "gas", "retail", "online", "utilities",
+                 "travel", "healthcare", "entertainment", "atm_withdrawal"]},
+    {"name": "channel", "type": "string", "nullable": false, "allowed": ["in_person", "online"]},
+    {"name": "is_fraud", "type": "boolean", "nullable": false}
+  ]
+}

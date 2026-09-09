@@ -1,0 +1,13 @@
+{
+  "entity": "branches",
+  "version": "1.0.0",
+  "description": "Physical bank branch locations.",
+  "primary_key": ["branch_id"],
+  "columns": [
+    {"name": "branch_id", "type": "string", "nullable": false, "pattern": "^BR_[0-9]{8}$"},
+    {"name": "branch_name", "type": "string", "nullable": false},
+    {"name": "city", "type": "string", "nullable": false},
+    {"name": "state", "type": "string", "nullable": false},
+    {"name": "opened_date", "type": "date", "nullable": false}
+  ]
+}

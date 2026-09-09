@@ -1,0 +1,16 @@
+{
+  "entity": "accounts",
+  "version": "1.0.0",
+  "description": "Deposit and credit accounts held by customers.",
+  "primary_key": ["account_id"],
+  "columns": [
+    {"name": "account_id", "type": "string", "nullable": false, "pattern": "^ACCT_[0-9]{8}$"},
+    {"name": "customer_id", "type": "string", "nullable": false, "pattern": "^CUST_[0-9]{8}$"},
+    {"name": "product_type", "type": "string", "nullable": false,
+     "allowed": ["checking", "savings", "cd", "money_market", "credit_card"]},
+    {"name": "apr", "type": "float", "nullable": false, "min": 0, "max": 1},
+    {"name": "open_date", "type": "date", "nullable": false},
+    {"name": "status", "type": "string", "nullable": false, "allowed": ["active", "closed", "frozen"]},
+    {"name": "initial_balance", "type": "float", "nullable": false}
+  ]
+}

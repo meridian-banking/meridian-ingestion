@@ -1,0 +1,18 @@
+{
+  "entity": "customers",
+  "version": "1.0.0",
+  "description": "Bank customers with demographic and credit attributes.",
+  "primary_key": ["customer_id"],
+  "columns": [
+    {"name": "customer_id", "type": "string", "nullable": false, "pattern": "^CUST_[0-9]{8}$"},
+    {"name": "first_name", "type": "string", "nullable": false},
+    {"name": "last_name", "type": "string", "nullable": false},
+    {"name": "age", "type": "integer", "nullable": false, "min": 18, "max": 120},
+    {"name": "annual_income", "type": "float", "nullable": false, "min": 0},
+    {"name": "credit_score", "type": "integer", "nullable": false, "min": 300, "max": 850},
+    {"name": "dti", "type": "float", "nullable": false, "min": 0, "max": 1},
+    {"name": "segment", "type": "string", "nullable": false, "allowed": ["mass", "affluent", "private"]},
+    {"name": "join_date", "type": "date", "nullable": false},
+    {"name": "home_branch_id", "type": "string", "nullable": false, "pattern": "^BR_[0-9]{8}$"}
+  ]
+}
