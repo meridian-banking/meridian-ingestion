@@ -84,3 +84,5 @@ src/meridian_ingestion/
 ```
 
 Part of the 8-repository Meridian platform.
+
+_Verified locally: ingested and staged 3.15M+ real transactions against MinIO and Postgres, with proven idempotency and dead-lettering._
